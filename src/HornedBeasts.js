@@ -1,4 +1,5 @@
 import React from 'react';
+import image from 'react-bootstrap/image';
 
 class HornedBeasts extends React.Component {
   render() {
