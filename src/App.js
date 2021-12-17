@@ -1,25 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import Header from './header';
+import Main from './main.js';
+import Footer from './Footer.js';
+import SelectedBeast from './SelectedBeasts.js';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      show: false,
+      featuredBeast: {}
+    }
+  }
+
+  closeModal = () => {
+    this.setState({ show: false })
+  }
+
+  openModal = () => {
+    this.setState({ show: true })
+  }
+
+  updateBeast = (beast) => {
+    this.setState({
+      featuredBeast: beast
+    })
+    this.openModal();
+  }
+
+
+
+  render() {
+    return (
+      <div>
+        <Header />
+        <Main updateBeast={this.updateBeast}/>
+        <Footer />
+        <SelectedBeast featuredBeast={this.state.featuredBeast} closeModal={this.closeModal} show={this.state.show}/>
+      </div>
+    )
+  }
 }
-
-export default App;
