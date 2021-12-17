@@ -1,23 +1,44 @@
-import React from 'react';
-import './App.css';
-import Main from './Main.js';
-import Header from './Header.js';
+import React, { Component } from 'react';
+import Header from './header';
+import Main from './main.js';
 import Footer from './Footer.js';
-import HornedBeasts from './HornedBeasts.js'
+import SelectedBeast from './SelectedBeasts.js';
+
+export default class App extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      show: false,
+      featuredBeast: {}
+    }
+  }
+
+  closeModal = () => {
+    this.setState({ show: false })
+  }
+
+  openModal = () => {
+    this.setState({ show: true })
+  }
+
+  updateBeast = (beast) => {
+    this.setState({
+      featuredBeast: beast
+    })
+    this.openModal();
+  }
 
 
-class App extends React.Component {
+
   render() {
     return (
-      <div className="App">
-        <h1>Hello World!</h1>
+      <div>
         <Header />
-        <Main />
+        <Main updateBeast={this.updateBeast}/>
         <Footer />
-        <HornedBeasts />
+        <SelectedBeast featuredBeast={this.state.featuredBeast} closeModal={this.closeModal} show={this.state.show}/>
       </div>
-    );
+    )
   }
 }
-
-export default App;
