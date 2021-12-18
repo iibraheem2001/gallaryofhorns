@@ -1,32 +1,10 @@
 # README.md
-Number and name of feature: ________________________________
+Number and name of feature: Feature #1
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: 2 hrs
 
-Start time: _____
+Start time: 12pm
 
-Finish time: _____
+Finish time: 3pm
 
-Actual time needed to complete: _____
-
-
-Number and name of feature: ________________________________
-
-Estimate of time needed to complete: _____
-
-Start time: _____
-
-Finish time: _____
-
-Actual time needed to complete: _____
-
-
-Number and name of feature: ________________________________
-
-Estimate of time needed to complete: _____
-
-Start time: _____
-
-Finish time: _____
-
-Actual time needed to complete: _____
+Actual time needed to complete: 3 hrs
