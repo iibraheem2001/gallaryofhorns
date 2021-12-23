@@ -4,7 +4,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import React from "react";
 import Form from "react-bootstrap/Form";
-import HornedBeasts from './horned_beasts.js';
+import HornedBeasts from './HornedBeasts.js';
 import data from './data.json';
 
 export default class Main extends Component {
